@@ -6,7 +6,7 @@ The plug-in adds a tab to the launch configuration which allows the user to sele
 When the launch configuration is executed to start the Java program, the plug-in reads the text files and sets each key=value pair as an environment variable
 for the new process.
 
-This is especially useful when using an application uses environment variables for differentiating its configuration for different execution environments.
+This is especially useful when an application uses environment variables for differentiating its configuration for different execution environments.
 
 # license
 Eclipse Public License 2.0
