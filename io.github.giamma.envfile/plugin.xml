@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabs">
+      <launchConfigurationTab
+            class="io.github.giamma.envfile.launch.EnvFileTab"
+            group="org.eclipse.jdt.debug.ui.launchConfigurationTabGroup.localJavaApplication"
+            id="env.tab"
+            name="Environment Variables from File">
+      </launchConfigurationTab>
+   </extension>
+   
+      <extension
+            point="org.eclipse.debug.core.launchDelegates">
+         <launchDelegate
+               delegate="io.github.giamma.envfile.launch.CustomJavaLaunchDelegate"
+               delegateDescription="An extension to the standard Eclipse JDT Java Application Launcher that populates the process enviroment with variables defined in one or more text files. The user can safely enable this launcher as the default workspace launcher for Java applications or alternatively the user can specify the JDT launcher as the default. This laucher will then be used only for those launch configurations in which the user specified one or more environment files via the dedicated configuration tab."
+               id="envfiles.delegate"
+               modes="run,debug,profile"
+               name="%launchDelegate.name"
+               sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+               sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer"
+               type="org.eclipse.jdt.launching.localJavaApplication">
+         </launchDelegate>
+      </extension>
+      <extension
+            point="org.eclipse.ui.startup">
+         <startup
+               class="io.github.giamma.envfile.launch.Startup">
+         </startup>
+      </extension>
+   
+</plugin>
