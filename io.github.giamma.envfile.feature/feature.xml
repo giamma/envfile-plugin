@@ -2,7 +2,7 @@
 <feature
       id="io.github.giamma.envfile.feature"
       label="EnvFile Feature"
-      version="1.0.0.qualifier">
+      version="1.0.1.qualifier">
 
    <description>
       A feature that allows Java launch configuration to include s 
